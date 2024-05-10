@@ -1,0 +1,39 @@
+{
+  "name": "getaddress-combined",
+  "version": "1.0.0",
+  "description": "Combines Autocomplete, Typeahead, Find and Location JavaScript libraries.",
+  "main": "./lib/Index",
+  "type": "module",
+  "types": "./lib/Index",
+  "typings": "./lib/Index",
+  "scripts": {
+    "compile": "tsc -p .",
+    "cleanDist": "rimraf --glob dist/*",
+    "rollup": "rollup -c",
+    "build": "npm-run-all cleanDist compile rollup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getAddress/Combined.git"
+  },
+  "author": "getaddress.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getAddress/Combined/issues"
+  },
+  "homepage": "https://getaddress.io",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.17.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "getaddress-autocomplete": "^1.3.5",
+    "getaddress-find": "^2.1.0",
+    "getaddress-location": "^1.1.1",
+    "getaddress-typeahead": "^1.1.1"
+  }
+}

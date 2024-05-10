@@ -1,0 +1,10 @@
+import { Options as AutoCompleteOptions } from "getaddress-autocomplete";
+import { SearchOn } from "getaddress-typeahead";
+import { Options as LocationOptions } from "getaddress-location";
+import { SetupOptions as FindOptions } from "getaddress-find";
+declare function autocomplete(id: string, api_key: string, options: Partial<AutoCompleteOptions>): void;
+declare function typeahead(id: string, search_on: SearchOn, api_key: string): void;
+declare function location(id: string, api_key: string, options: Partial<LocationOptions>): void;
+declare function find(id: string, api_key: string, options?: FindOptions): void;
+declare function destroy(): void;
+export { AutoCompleteOptions, autocomplete, destroy, typeahead, SearchOn, LocationOptions, location, find, FindOptions };
