@@ -1,7 +1,8 @@
 import {autocomplete as ac,destroy as acDestroy, Options as AutoCompleteOptions} from "getaddress-autocomplete"; 
 import {typeahead as t,destroy as tDestroy ,SearchOn} from "getaddress-typeahead";
 import {location as l, destroy as lDestory, Options as LocationOptions} from "getaddress-location";
-import {SetupOptions as FindOptions,find as f} from "getaddress-find"
+import {SetupOptions as FindOptions,find as f} from "getaddress-find";
+import {location as ln, destroy as lnDestory, Options as LocationNativeOptions} from "getaddress-location-native";
 
 function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
 {
@@ -16,6 +17,10 @@ function location(id:string,api_key:string, options: Partial<LocationOptions>){
      l(id, api_key,options);
 }
 
+function locationNative(id:string,api_key:string, options: Partial<LocationNativeOptions>){
+     ln(id, api_key,options);
+}
+
 function find(id:string,api_key:string, options:FindOptions = new FindOptions()){
     f(id,api_key,options);
 }
@@ -25,6 +30,10 @@ function destroy()
     acDestroy();
     tDestroy();
     lDestory();
+    lnDestory();
 }
 
-export {AutoCompleteOptions,autocomplete, destroy, typeahead, SearchOn, LocationOptions,location, find, FindOptions}
+export {AutoCompleteOptions,
+autocomplete, destroy, typeahead, 
+SearchOn, LocationOptions,location, find, 
+FindOptions,LocationNativeOptions, locationNative}
