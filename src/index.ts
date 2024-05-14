@@ -3,10 +3,16 @@ import {typeahead as t,destroy as tDestroy ,SearchOn} from "getaddress-typeahead
 import {location as l, destroy as lDestory, Options as LocationOptions} from "getaddress-location";
 import {SetupOptions as FindOptions,find as f} from "getaddress-find";
 import {location as ln, destroy as lnDestory, Options as LocationNativeOptions} from "getaddress-location-native";
+import {autocomplete as acn,destroy as acnDestroy, Options as AutoCompleteNativeOptions} from "getaddress-autocomplete-native"; 
 
 function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
 {
     ac(id, api_key,options);
+}
+
+function autocompleteNative(id:string,api_key:string, options: Partial<AutoCompleteNativeOptions>)
+{
+    acn(id, api_key,options);
 }
 
 function typeahead(id:string, search_on:SearchOn,api_key:string){
@@ -36,4 +42,5 @@ function destroy()
 export {AutoCompleteOptions,
 autocomplete, destroy, typeahead, 
 SearchOn, LocationOptions,location, find, 
-FindOptions,LocationNativeOptions, locationNative}
+FindOptions,LocationNativeOptions,
+locationNative,autocompleteNative,AutoCompleteNativeOptions}
