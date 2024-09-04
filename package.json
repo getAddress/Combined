@@ -1,6 +1,6 @@
 {
   "name": "getaddress-combined",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Autocomplete, Typeahead, Find and Location JavaScript libraries.",
   "main": "./lib/Index",
   "type": "module",
@@ -31,7 +31,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "getaddress-autocomplete": "^1.3.5",
+    "getaddress-autocomplete": "^1.3.6",
     "getaddress-autocomplete-native": "^1.1.1",
     "getaddress-find": "^2.1.0",
     "getaddress-location": "^1.1.1",
