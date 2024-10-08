@@ -4,6 +4,12 @@ import {location as l, destroy as lDestory, Options as LocationOptions} from "ge
 import {SetupOptions as FindOptions,find as f} from "getaddress-find";
 import {location as ln, destroy as lnDestory, Options as LocationNativeOptions} from "getaddress-location-native";
 import {autocomplete as acn,destroy as acnDestroy, Options as AutoCompleteNativeOptions} from "getaddress-autocomplete-native"; 
+import {modal as m, Options as ModalOptions, destroy as mDestroy} from "getaddress-autocomplete-modal";
+
+function modal(id:string,api_key:string,options:Partial<ModalOptions>)
+{
+    m(id,api_key,options);
+}
 
 function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
 {
@@ -37,10 +43,15 @@ function destroy()
     tDestroy();
     lDestory();
     lnDestory();
+    mDestroy();
 }
 
-export {AutoCompleteOptions,
-autocomplete, destroy, typeahead, 
-SearchOn, LocationOptions,location, find, 
-FindOptions,LocationNativeOptions,
-locationNative,autocompleteNative,AutoCompleteNativeOptions}
+export {
+AutoCompleteOptions,autocomplete, 
+destroy, 
+typeahead, SearchOn, 
+location ,LocationOptions,
+find, FindOptions,
+LocationNativeOptions,locationNative,
+autocompleteNative,AutoCompleteNativeOptions, 
+modal,ModalOptions}
