@@ -9,7 +9,7 @@ npm install getaddress-combined
 ```
 ### Or CDN
 ```
-<script src="https://cdn.getaddress.io/scripts/getaddress-1.0.0.min.js"></script>
+<script src="https://cdn.getaddress.io/scripts/getaddress-2.0.0.min.js"></script>
 ```
 
 ## Usage
