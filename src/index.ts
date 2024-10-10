@@ -8,33 +8,33 @@ import {modal as m, Options as ModalOptions, destroy as mDestroy} from "getaddre
 
 function modal(id:string,api_key:string,options:Partial<ModalOptions>)
 {
-    m(id,api_key,options);
+    return m(id,api_key,options);
 }
 
 function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
 {
-    ac(id, api_key,options);
+    return ac(id, api_key,options);
 }
 
 function autocompleteNative(id:string,api_key:string, options: Partial<AutoCompleteNativeOptions>)
 {
-    acn(id, api_key,options);
+    return acn(id, api_key,options);
 }
 
 function typeahead(id:string, search_on:SearchOn,api_key:string){
-    t(id,search_on,api_key);
+    return t(id,search_on,api_key);
 }
 
 function location(id:string,api_key:string, options: Partial<LocationOptions>){
-     l(id, api_key,options);
+     return l(id, api_key,options);
 }
 
 function locationNative(id:string,api_key:string, options: Partial<LocationNativeOptions>){
-     ln(id, api_key,options);
+     return ln(id, api_key,options);
 }
 
 function find(id:string,api_key:string, options:FindOptions = new FindOptions()){
-    f(id,api_key,options);
+    return f(id,api_key,options);
 }
 
 function destroy()
