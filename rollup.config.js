@@ -9,8 +9,7 @@ export default [
         input: "lib/Index.js",
         output: {
             file:"dist/getaddress-" + pkg.version + ".mjs",
-            format:"es",
-            sourcemap:  "inline"
+            format:"es"
         }
         ,plugins:[nodeResolve()]
     },
@@ -20,8 +19,7 @@ export default [
             {
                 file:"dist/getaddress-" + pkg.version + ".js",
                 format:"iife", 
-                name:'getAddress',
-                sourcemap:  "inline"
+                name:'getAddress'
             }
         
         ,plugins:[nodeResolve()]
