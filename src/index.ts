@@ -16,6 +16,11 @@ function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOpt
     return ac(id, api_key,options);
 }
 
+function autocompleteV2(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
+{
+    return ac(id, api_key,options);
+}
+
 function autocompleteNative(id:string,api_key:string, options: Partial<AutoCompleteNativeOptions>)
 {
     return acn(id, api_key,options);
@@ -47,7 +52,9 @@ function destroy()
 }
 
 export {
-AutoCompleteOptions,autocomplete, 
+AutoCompleteOptions,
+autocomplete, 
+autocompleteV2,
 destroy, 
 typeahead, SearchOn, 
 location ,LocationOptions,
