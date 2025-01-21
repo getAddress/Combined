@@ -1,24 +1,30 @@
-import {autocomplete as ac,destroy as acDestroy, Options as AutoCompleteOptions} from "getaddress-autocomplete"; 
+import {autocomplete as acV2,destroy as acV2Destroy, Options as AutoCompleteOptionsV2} from "getaddress-autocomplete"; 
 import {typeahead as t,destroy as tDestroy ,SearchOn} from "getaddress-typeahead";
 import {location as l, destroy as lDestory, Options as LocationOptions} from "getaddress-location";
 import {SetupOptions as FindOptions,find as f} from "getaddress-find";
 import {location as ln, destroy as lnDestory, Options as LocationNativeOptions} from "getaddress-location-native";
 import {autocomplete as acn,destroy as acnDestroy, Options as AutoCompleteNativeOptions} from "getaddress-autocomplete-native"; 
 import {modal as m, Options as ModalOptions, destroy as mDestroy} from "getaddress-autocomplete-modal";
+import {autocomplete as acV3,destroy as acV3Destroy, Options as AutoCompleteOptionsV3} from '@getaddress/autocomplete';
 
 function modal(id:string,api_key:string,options:Partial<ModalOptions>)
 {
     return m(id,api_key,options);
 }
 
-function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
+function autocomplete(id:string,api_key:string, options: Partial<AutoCompleteOptionsV2>)
 {
-    return ac(id, api_key,options);
+    return acV2(id, api_key,options);
 }
 
-function autocompleteV2(id:string,api_key:string, options: Partial<AutoCompleteOptions>)
+function autocompleteV2  (id:string,api_key:string, options: Partial<AutoCompleteOptionsV2>)
 {
-    return ac(id, api_key,options);
+    return acV2(id, api_key,options);
+}
+
+const autocompleteV3 = async(id:string,api_key:string, options: Partial<AutoCompleteOptionsV3>)=>
+{
+    return await acV3(id, api_key,options);
 }
 
 function autocompleteNative(id:string,api_key:string, options: Partial<AutoCompleteNativeOptions>)
@@ -44,7 +50,8 @@ function find(id:string,api_key:string, options:FindOptions = new FindOptions())
 
 function destroy()
 {
-    acDestroy();
+    acV2Destroy();
+    acV3Destroy();
     tDestroy();
     lDestory();
     lnDestory();
@@ -52,7 +59,7 @@ function destroy()
 }
 
 export {
-AutoCompleteOptions,
+AutoCompleteOptionsV2,
 autocomplete, 
 autocompleteV2,
 destroy, 
@@ -61,4 +68,6 @@ location ,LocationOptions,
 find, FindOptions,
 LocationNativeOptions,locationNative,
 autocompleteNative,AutoCompleteNativeOptions, 
-modal,ModalOptions}
+modal,ModalOptions,
+AutoCompleteOptionsV3,
+autocompleteV3}
